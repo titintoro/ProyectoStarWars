@@ -6,9 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialsImportModule } from './materials-import/materials-import.module';
+import { PeopleListComponent } from './components/people-list/people-list.component';
+import { FilmListComponent } from './components/film-list/film-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PeopleListComponent, FilmListComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
