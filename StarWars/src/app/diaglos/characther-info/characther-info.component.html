@@ -9,11 +9,9 @@
         <p class="fs-body-1 tc-black-2" ng-transclude="">
           <span class="ng-binding ng-scope"
             >Birth Year: {{ data.peopleInfo.birth_year }}</span
-          ><br class="ng-scope" /><span class="ng-scope"
-            >Species: {{ data.peopleInfo.species[3] }}</span
-          ><a class="card-link ng-binding ng-scope" ng-href="">{{
-            data.peopleInfo.species[3]
-          }}</a
+          >
+          <br class="ng-scope" /><span class="ng-scope" *ngFor="let species of listSpecies">Species:{{mostrarSpecie(data.peopleInfo, species)}} </span>
+          <a class="card-link ng-binding ng-scope" ng-href=""></a
           ><br class="ng-scope" /><span class="ng-binding ng-scope"
             >Height: {{ data.peopleInfo.height }}cm</span
           ><br class="ng-scope" /><span class="ng-binding ng-scope"
