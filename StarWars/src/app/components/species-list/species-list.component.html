@@ -1,0 +1,62 @@
+<header>
+  <div class="contenedorImg">
+    <img
+      [ngStyle]="{ width: '20%' }"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png"
+    />
+  </div>
+</header>
+<body>
+  <div class="container">
+    <div id="contenedorPage">
+      <h3
+        [ngStyle]="{
+          width: '60%',
+          'text-align': 'start',
+          color: 'white',
+          'font-size': '30px',
+          'font-family': 'monospace'
+        }"
+      >
+        <a routerLink="/index-list">Home</a>/species
+      </h3>
+      <h3
+        [ngStyle]="{
+          'text-align': 'end',
+          'align-self': 'center',
+          width: '40%'
+        }"
+      >
+        <span
+          [ngStyle]="{
+            'align-self': 'center',
+            'text-align': 'start'
+          }"
+          *ngFor="let in of counter(); let i = index"
+          ><button (click)="mostrarListado(i + 1)">{{ i + 1 }}</button
+          >&nbsp;</span
+        >
+      </h3>
+    </div>
+    <div class="containerCard">
+      <mat-card class="example-card" *ngFor="let species of listSpecies">
+        <img
+          mat-card-image
+          [src]="mostrarImagen(species)"
+          onerror="this.onerror = null; this.src='https://programacion.net/files/article/20161110041116_image-not-found.png'"
+        />
+        <mat-card-title
+          [ngStyle]="{
+            'text-align': 'start',
+            'font-family': 'cursive',
+            'font-size': '15px'
+          }"
+          >{{ species.name }}</mat-card-title
+        >
+        <mat-card-footer>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</body>
