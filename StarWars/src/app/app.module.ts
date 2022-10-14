@@ -11,6 +11,7 @@ import { FilmListComponent } from './components/film-list/film-list.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { PlanetsComponent } from './components/planets/planets.component';
 import { StarshipsComponent } from './components/starships/starships.component';
+import { IndexComponent } from './components/index/index.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 @NgModule({
 
@@ -21,6 +22,7 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
     PlanetsComponent,
     SpeciesListComponent,
     StarshipsComponent,
+    IndexComponent,
     VehiclesComponent
   ],
 
