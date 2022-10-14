@@ -20,9 +20,20 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
   ],
 =======
 import { PlanetsComponent } from './components/planets/planets.component';
+import { StarshipsComponent } from './components/starships/starships.component';
 
 @NgModule({
+<<<<<<< HEAD
+  declarations: [
+    AppComponent,
+    PeopleListComponent,
+    FilmListComponent,
+    PlanetsComponent,
+    StarshipsComponent
+  ],
+=======
   declarations: [AppComponent, PeopleListComponent, FilmListComponent, PlanetsComponent],
+>>>>>>> main
 >>>>>>> main
   imports: [
     BrowserModule,
