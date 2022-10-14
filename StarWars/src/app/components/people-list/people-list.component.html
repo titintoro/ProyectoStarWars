@@ -39,7 +39,11 @@
       </h3>
     </div>
     <div class="containerCard">
-      <mat-card class="example-card" *ngFor="let people of listPeople">
+      <mat-card
+        class="example-card"
+        *ngFor="let people of listPeople"
+        (click)="mostrarInfo(people)"
+      >
         <img
           mat-card-image
           [src]="mostrarImagen(people)"
