@@ -12,6 +12,7 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
 import { PlanetsComponent } from './components/planets/planets.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { IndexComponent } from './components/index/index.component';
+import { VehiclesComponent } from './components/vehicles/vehicles.component';
 @NgModule({
 
   declarations: [
@@ -21,7 +22,8 @@ import { IndexComponent } from './components/index/index.component';
     PlanetsComponent,
     SpeciesListComponent,
     StarshipsComponent,
-    IndexComponent
+    IndexComponent,
+    VehiclesComponent
   ],
 
   imports: [
