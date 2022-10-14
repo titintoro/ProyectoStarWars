@@ -9,9 +9,16 @@ import { MaterialsImportModule } from './materials-import/materials-import.modul
 import { PeopleListComponent } from './components/people-list/people-list.component';
 import { FilmListComponent } from './components/film-list/film-list.component';
 import { PlanetsComponent } from './components/planets/planets.component';
+import { StarshipsComponent } from './components/starships/starships.component';
 
 @NgModule({
-  declarations: [AppComponent, PeopleListComponent, FilmListComponent, PlanetsComponent],
+  declarations: [
+    AppComponent,
+    PeopleListComponent,
+    FilmListComponent,
+    PlanetsComponent,
+    StarshipsComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
