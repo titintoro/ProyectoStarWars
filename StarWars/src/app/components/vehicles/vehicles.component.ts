@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { VehiclesInfoComponent } from 'src/app/diaglos/vehicles-info/vehicles-info.component';
 import { Vehicles } from 'src/app/interfaces/vehicles.interface';
 import { VehiclesService } from 'src/app/services/vehicles.service';
 import { environment } from 'src/environments/environment';
@@ -11,8 +13,9 @@ export class VehiclesComponent implements OnInit {
 
   listVehicles: Vehicles[] = [];
   numPages=0
+  vehiclesSelected: Vehicles | undefined;
 
-  constructor(private vehiclesService: VehiclesService) { }
+  constructor(private vehiclesService: VehiclesService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.mostrarListadoVehicles(1);
@@ -32,6 +35,17 @@ export class VehiclesComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  mostrarInfo(vehicles:Vehicles) {
+    this.vehiclesService.obtenerDetalles(vehicles).subscribe((res) => {
+      this.vehiclesSelected = res;
+      this.dialog.open(VehiclesInfoComponent, {
+        data: {
+          vehicleInfo: this.vehiclesSelected
+        },
+      });
+    });
   }
 
 }

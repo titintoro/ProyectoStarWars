@@ -18,6 +18,9 @@ import { CharactherInfoComponent } from './diaglos/characther-info/characther-in
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
 import { FilmInfoComponent } from './diaglos/film-info/film-info.component';
 import { SpeciesInfoComponent } from './diaglos/species-info/species-info.component';
+import { PlanetsInfoComponent } from './diaglos/planets-info/planets-info.component';
+import { VehiclesInfoComponent } from './diaglos/vehicles-info/vehicles-info.component';
+import { StarshipsInfoComponent } from './diaglos/starships-info/starships-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +35,9 @@ import { SpeciesInfoComponent } from './diaglos/species-info/species-info.compon
     FilmInfoComponent,
     PaginaNoEncontradaComponent,
     SpeciesInfoComponent,
+    PlanetsInfoComponent,
+    VehiclesInfoComponent,
+    StarshipsInfoComponent,
   ],
 
   imports: [

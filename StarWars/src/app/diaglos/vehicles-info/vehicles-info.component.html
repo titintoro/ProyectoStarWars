@@ -1,0 +1,26 @@
+<div mat-dialog-content>
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <img mat-card-md-image [src]="mostrarImagen(data.vehicleInfo.url)" />
+        <div class="p+">
+          <h2 class="fs-headline display-block ng-binding">
+            {{ data.vehicleInfo.name }}
+          </h2>
+          <p class="fs-body-1 tc-black-2" ng-transclude="">
+            <span class="ng-binding ng-scope"
+              >Model: {{ data.vehicleInfo.model }}</span
+            >
+            <br class="ng-scope" /><span class="ng-binding ng-scope"
+              >Cost: {{ data.vehicleInfo.cost_in_credits }}</span
+            ><br class="ng-scope" /><span class="ng-binding ng-scope"
+              >Max Speed: {{ data.vehicleInfo.max_atmosphering_speed }}</span
+            ><br class="ng-scope" /><span class="ng-binding ng-scope"
+              >Passengers:</span
+            ><br />
+            <span>{{ data.vehicleInfo.passengers }}</span>
+          </p>
+        </div>
+      </mat-card-title-group>
+    </mat-card>
+  </div>
+  

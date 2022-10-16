@@ -1,4 +1,3 @@
-
 <header>
   <div class="contenedorImg">
     <img
@@ -40,7 +39,11 @@
       </h3>
     </div>
     <div class="containerCard">
-      <mat-card class="example-card" *ngFor="let vehicles of listVehicles ">
+      <mat-card
+        class="example-card"
+        *ngFor="let vehicles of listVehicles"
+        (click)="mostrarInfo(vehicles)"
+      >
         <img
           mat-card-image
           [src]="mostrarImagenVehicles(vehicles)"

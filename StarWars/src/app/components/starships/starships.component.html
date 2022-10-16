@@ -1,4 +1,3 @@
-
 <header>
   <div class="contenedorImg">
     <img
@@ -40,7 +39,11 @@
       </h3>
     </div>
     <div class="containerCard">
-      <mat-card class="example-card" *ngFor="let starship of listStarships">
+      <mat-card
+        class="example-card"
+        *ngFor="let starship of listStarships"
+        (click)="mostrarInfo(starship)"
+      >
         <img
           mat-card-image
           [src]="mostrarImagenStarship(starship)"
