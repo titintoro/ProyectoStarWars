@@ -24,10 +24,10 @@ export class CharactherInfoComponent implements OnInit {
   }
 
   mostrarSpecie(url: string, specie: Specie) {
-    for (let i = 0; i < this.listPeople.length; i++) {
-      if (url == this.listPeople[i].url) {
-      }
+    if (url == specie.url) {
+      return specie.name;
     }
+
     return undefined;
   }
 }
