@@ -13,6 +13,7 @@ import { PlanetsComponent } from './components/planets/planets.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { IndexComponent } from './components/index/index.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
 @NgModule({
 
   declarations: [
@@ -23,7 +24,8 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
     SpeciesListComponent,
     StarshipsComponent,
     IndexComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    PaginaNoEncontradaComponent
   ],
 
   imports: [
@@ -31,7 +33,7 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialsImportModule,
+    MaterialsImportModule
   ],
   providers: [],
   bootstrap: [AppComponent],
