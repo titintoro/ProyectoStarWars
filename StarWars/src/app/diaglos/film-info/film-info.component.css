@@ -1,0 +1,28 @@
+.mat-dialog-content {
+    margin: 0 auto;
+    background: transparent;
+    height: 880px;
+  }
+  
+  .example-card {
+    max-width: 950px;
+    height: 280px;
+    margin-bottom: 8px;
+    width: 950px;
+  }
+  .mat-card-md-image {
+    height: 270px;
+    width: auto;
+  }
+  
+  .mat-card-title-group {
+    justify-content: start;
+  }
+  
+  .p\+ {
+    padding-left: 2em;
+  }
+  .example {
+    width: 290px;
+  }
+  

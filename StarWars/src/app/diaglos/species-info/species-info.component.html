@@ -1,0 +1,38 @@
+<div mat-dialog-content>
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <img mat-card-md-image [src]="mostrarImagen(data.specieInfo.url)" />
+      <div class="p+">
+        <h2 class="fs-headline display-block ng-binding">
+          {{ data.specieInfo.name }}
+        </h2>
+        <p class="fs-body-1 tc-black-2" ng-transclude="">
+          <span class="ng-binding ng-scope"
+            >Classification: {{ data.specieInfo.classification }}</span
+          >
+          <br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Designation: {{ data.specieInfo.designation }}</span
+          ><br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Language: {{ data.specieInfo.language }}</span
+          ><br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Avg Lifespan: {{ data.specieInfo.average_lifespan }} years</span
+          >
+          <br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Avg Height: {{ data.specieInfo.average_height }}cm</span
+          >
+          <br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Hair Color(s): {{ data.specieInfo.hair_colors }}</span
+          >
+
+          <br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Skin Color(s): {{ data.specieInfo.skin_colors }}</span
+          >
+
+          <br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Eye Color(s): {{ data.specieInfo.eye_colors }}</span
+          >
+        </p>
+      </div>
+    </mat-card-title-group>
+  </mat-card>
+</div>

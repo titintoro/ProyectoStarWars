@@ -13,10 +13,12 @@ import { PlanetsComponent } from './components/planets/planets.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { IndexComponent } from './components/index/index.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { CharactherInfoComponent } from './diaglos/characther-info/characther-info.component';
 
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
+import { FilmInfoComponent } from './diaglos/film-info/film-info.component';
+import { SpeciesInfoComponent } from './diaglos/species-info/species-info.component';
 @NgModule({
-
   declarations: [
     AppComponent,
     PeopleListComponent,
@@ -26,7 +28,10 @@ import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/p
     StarshipsComponent,
     IndexComponent,
     VehiclesComponent,
-    PaginaNoEncontradaComponent
+    CharactherInfoComponent,
+    FilmInfoComponent,
+    PaginaNoEncontradaComponent,
+    SpeciesInfoComponent,
   ],
 
   imports: [
@@ -34,7 +39,7 @@ import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/p
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialsImportModule
+    MaterialsImportModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

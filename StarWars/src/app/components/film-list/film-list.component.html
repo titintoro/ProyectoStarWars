@@ -18,7 +18,7 @@
           'font-family': 'monospace'
         }"
       >
-        <a routerLink="/index-list">Home</a>/films
+        <a routerLink="/index">Home</a>/films
       </h3>
       <h3
         [ngStyle]="{
@@ -39,7 +39,11 @@
       </h3>
     </div>
     <div class="containerCard">
-      <mat-card class="example-card" *ngFor="let film of listFilms">
+      <mat-card
+        class="example-card"
+        *ngFor="let film of listFilms"
+        (click)="mostrarInfo(film)"
+      >
         <img
           mat-card-image
           [src]="mostrarImagen(film)"

@@ -10,10 +10,11 @@
           <span class="ng-binding ng-scope"
             >Birth Year: {{ data.peopleInfo.birth_year }}</span
           >
-          <br class="ng-scope" /><span
-            class="ng-scope"
-            **ngFor="let specie of listSpecies"
-            >Species:{{ mostrarSpecie(data.peopleInfo, specie) }}
+          <br class="ng-scope" />
+          <span class="ng-scope" *ngFor="let specie of listSpecies"
+            ><span *ngIf="mostrarSpecie(data.peopleInfo, specie)">{{
+              specie.name
+            }}</span>
           </span>
           <a class="card-link ng-binding ng-scope" ng-href=""></a
           ><br class="ng-scope" /><span class="ng-binding ng-scope"
@@ -26,12 +27,35 @@
             >Hair Color: {{ data.peopleInfo.hair_color }}</span
           ><br class="ng-scope" /><span class="ng-binding ng-scope"
             >Skin Color: {{ data.peopleInfo.skin_color }}</span
-          ><br class="ng-scope" /><span class="ng-scope">Homeworld: </span
-          ><a class="card-link ng-binding ng-scope" ng-href="#" href="#">{{
-            data.peopleInfo.homeworld
-          }}</a>
+          ><br class="ng-scope" /><span
+            class="ng-scope"
+            *ngFor="let planet of listPlanets"
+            ><span *ngIf="mostrarMundo(data.peopleInfo, planet)">{{
+              planet.name
+            }}</span> </span
+          ><a class="card-link ng-binding ng-scope" ng-href="#" href="#"></a>
         </p>
       </div>
     </mat-card-title-group>
+    <!-- EL METODO ESTÁ BIEN PERO NO LO MUESTRA
+    <div [ngStyle]="{ display: 'flex ', 'margin-top': '3em', width: '860px' }">
+      <mat-card class="example">
+        <mat-card-title>Related Films </mat-card-title>
+        <mat-card-content *ngFor="let films of listFilms">
+          <span *ngIf="verPeliculas(data.peopleInfo, films)">
+            <img
+              [ngStyle]="{
+                'border-radius': '50px',
+                width: '60px',
+                height: '60px'
+              }"
+              mat-card-sm-image
+              [src]="mostrarImagenFilm(films)"
+            />
+            <span>{{ films.title }}</span></span
+          >
+        </mat-card-content>
+      </mat-card>
+    </div>-->
   </mat-card>
 </div>
