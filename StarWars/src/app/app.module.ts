@@ -33,7 +33,7 @@ import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/p
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialsImportModule,
+    MaterialsImportModule
   ],
   providers: [],
   bootstrap: [AppComponent],
