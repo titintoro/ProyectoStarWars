@@ -14,6 +14,7 @@ export class CharactherInfoComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   listSpecies: Specie[] = [];
+  listPeople: People[] = [];
   ngOnInit(): void {}
 
   //muestra la imagen por el id del characther
@@ -22,10 +23,9 @@ export class CharactherInfoComponent implements OnInit {
     return `${environment.apiUrlBaseImg}/characters/${id}.jpg`;
   }
 
-  mostrarSpecie(people: People, specie: Specie) {
-    for (let i of people.species) {
-      if (i.toLowerCase() ==  specie.name) {
-        return specie.name;
+  mostrarSpecie(url: string, specie: Specie) {
+    for (let i = 0; i < this.listPeople.length; i++) {
+      if (url == this.listPeople[i].url) {
       }
     }
     return undefined;
