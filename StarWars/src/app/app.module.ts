@@ -13,7 +13,8 @@ import { PlanetsComponent } from './components/planets/planets.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { IndexComponent } from './components/index/index.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
-import { CharactherInfoComponent } from './diaglos/characther-info/characther-info.component';
+
+import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
 @NgModule({
 
   declarations: [
@@ -25,7 +26,7 @@ import { CharactherInfoComponent } from './diaglos/characther-info/characther-in
     StarshipsComponent,
     IndexComponent,
     VehiclesComponent,
-    CharactherInfoComponent
+    PaginaNoEncontradaComponent
   ],
 
   imports: [
@@ -33,7 +34,7 @@ import { CharactherInfoComponent } from './diaglos/characther-info/characther-in
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialsImportModule,
+    MaterialsImportModule
   ],
   providers: [],
   bootstrap: [AppComponent],
