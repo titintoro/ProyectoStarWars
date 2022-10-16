@@ -23,11 +23,12 @@ export class CharactherInfoComponent implements OnInit {
     return `${environment.apiUrlBaseImg}/characters/${id}.jpg`;
   }
 
-  mostrarSpecie(url: string, specie: Specie) {
-    if (url == specie.url) {
-      return specie.name;
+  mostrarSpecie(people: People, specie: Specie) {
+    for (let i of people.films) {
+      if (i == specie.url) {
+        return specie.name;
+      }
     }
-
     return undefined;
   }
 }

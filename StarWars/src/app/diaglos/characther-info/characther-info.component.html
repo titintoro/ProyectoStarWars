@@ -10,8 +10,10 @@
           <span class="ng-binding ng-scope"
             >Birth Year: {{ data.peopleInfo.birth_year }}</span
           >
-          <br class="ng-scope" /><span class="ng-scope" **ngFor="let specie of listSpecies"
-            >Species:{{ mostrarSpecie(data.peopleInfo.species[0], specie) }}
+          <br class="ng-scope" /><span
+            class="ng-scope"
+            **ngFor="let specie of listSpecies"
+            >Species:{{ mostrarSpecie(data.peopleInfo, specie) }}
           </span>
           <a class="card-link ng-binding ng-scope" ng-href=""></a
           ><br class="ng-scope" /><span class="ng-binding ng-scope"
