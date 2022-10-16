@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FilmListComponent } from './components/film-list/film-list.component';
 import { IndexComponent } from './components/index/index.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports:[RouterModule],
+  imports: [
+    RouterModule.forRoot(routes)]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
