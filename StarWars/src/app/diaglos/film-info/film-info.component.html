@@ -1,0 +1,25 @@
+<div mat-dialog-content>
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <img mat-card-md-image [src]="mostrarImagen(data.filmInfo.url)" />
+      <div class="p+">
+        <h2 class="fs-headline display-block ng-binding">
+          {{ data.filmInfo.title }}
+        </h2>
+        <p class="fs-body-1 tc-black-2" ng-transclude="">
+          <span class="ng-binding ng-scope"
+            >Date Created: {{ data.filmInfo.release_date }}</span
+          >
+          <br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Director: {{ data.filmInfo.director }}</span
+          ><br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Producer(s): {{ data.filmInfo.producer }}</span
+          ><br class="ng-scope" /><span class="ng-binding ng-scope"
+            >Opening Crawl:</span
+          ><br>
+          <span>{{ data.filmInfo.opening_crawl }}</span>
+        </p>
+      </div>
+    </mat-card-title-group>
+  </mat-card>
+</div>

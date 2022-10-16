@@ -6,7 +6,7 @@
   color: black;
 }
 
-.containerCard {
+.containerCard{
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +44,7 @@ body {
   margin: 0 auto;
 }
 
-#contenedorPage {
+#contenedorPage{
   display: flex;
   width: 98%;
 }

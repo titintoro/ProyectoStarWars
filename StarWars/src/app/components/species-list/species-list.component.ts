@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Specie } from 'src/app/interfaces/species-interface';
 import { SpeciesService } from 'src/app/services/species.service';
 import { environment } from 'src/environments/environment';
@@ -9,7 +10,11 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./species-list.component.css'],
 })
 export class SpeciesListComponent implements OnInit {
-  constructor(private speciesService: SpeciesService) {}
+  constructor(
+    private speciesService: SpeciesService,
+    public dialog: MatDialog
+  ) {}
+  specieSelected: Specie | undefined;
 
   listSpecies: Specie[] = [];
   numPages = 0;
@@ -34,5 +39,16 @@ export class SpeciesListComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  mostrarInfo(species: Specie) {
+    this.speciesService.obtenerDetalles(species).subscribe((res) => {
+      this.specieSelected = res;
+      this.dialog.open(SpeciesListComponent, {
+        data: {
+          specieInfo: this.specieSelected,
+        },
+      });
+    });
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CharactherInfoComponent } from 'src/app/diaglos/characther-info/characther-info.component';
 import { People } from 'src/app/interfaces/people-interface';
 import { PeopleService } from 'src/app/services/people.service';
 import { environment } from 'src/environments/environment';
@@ -11,8 +13,9 @@ import { environment } from 'src/environments/environment';
 export class PeopleListComponent implements OnInit {
   listPeople: People[] = [];
   numPages = 0;
+  peopleSelected: People | undefined;
 
-  constructor(private peopleService: PeopleService) {}
+  constructor(private peopleService: PeopleService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.mostrarListado(1);
@@ -34,5 +37,16 @@ export class PeopleListComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  mostrarInfo(people: People) {
+    this.peopleService.obtenerDetalles(people).subscribe((res) => {
+      this.peopleSelected = res;
+      this.dialog.open(CharactherInfoComponent, {
+        data: {
+          peopleInfo: this.peopleSelected
+        },
+      });
+    });
   }
 }

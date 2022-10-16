@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CharactherInfoComponent } from 'src/app/diaglos/characther-info/characther-info.component';
+import { FilmInfoComponent } from 'src/app/diaglos/film-info/film-info.component';
 import { Film } from 'src/app/interfaces/film-interface';
 import { FilmService } from 'src/app/services/films.service';
 import { environment } from 'src/environments/environment';
@@ -11,8 +14,9 @@ import { environment } from 'src/environments/environment';
 export class FilmListComponent implements OnInit {
   listFilms: Film[] = [];
   numPages = 0;
+  filmSelected: Film | undefined;
 
-  constructor(private filmService: FilmService) {}
+  constructor(private filmService: FilmService,  public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.mostrarListado(1);
@@ -34,5 +38,17 @@ export class FilmListComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  
+  mostrarInfo(film: Film) {
+    this.filmService.obtenerDetalles(film).subscribe((res) => {
+      this.filmSelected = res;
+      this.dialog.open(FilmInfoComponent, {
+        data: {
+          filmInfo: this.filmSelected
+        },
+      });
+    });
   }
 }
