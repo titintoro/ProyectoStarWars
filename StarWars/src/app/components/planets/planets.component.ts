@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PlanetsInfoComponent } from 'src/app/diaglos/planets-info/planets-info.component';
 import { Planets } from 'src/app/interfaces/planets.interface';
 import { PlanetsService } from 'src/app/services/planets.service';
 import { environment } from 'src/environments/environment';
@@ -12,8 +14,9 @@ export class PlanetsComponent implements OnInit {
 
   listPlanets: Planets[] = [];
   numPages=0
+  planetSelected: Planets | undefined;
 
-  constructor(private planetsService: PlanetsService) { }
+  constructor(private planetsService: PlanetsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.mostrarListadoPlanets(1);
@@ -33,5 +36,16 @@ export class PlanetsComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  mostrarInfo(planets:Planets) {
+    this.planetsService.obtenerDetalles(planets).subscribe((res) => {
+      this.planetSelected = res;
+      this.dialog.open(PlanetsInfoComponent, {
+        data: {
+          planetInfo: this.planetSelected
+        },
+      });
+    });
   }
 }
